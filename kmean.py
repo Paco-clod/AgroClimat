@@ -183,6 +183,7 @@ if st.button("Lancer l'Analyse ACP"):
 
 # Titre de l'application
 st.subheader("Clustering des données climatiques avec KMeans")
+# Bouton pour exécuter KMeans
 
 if st.button("Lancer l'agorithme de Kmeans"):
     pca, pca_data, n_components, explained_variance = apply_pca(df_clim)
@@ -213,3 +214,5 @@ elif st.button("Lancer la représentation cartographique des clusters"):
     fig, ax = plt.subplots(figsize=(10, 6))
     geo.merge(df_agroclimat, left_on='NOM_COM', right_on='Communes').plot(column='color', cmap=tab20, legend=True, ax=ax)
     st.pyplot(fig)
+else:
+    st.write("Veuillez lancer l'algorithme de KMeans pour afficher la carte des clusters.")
