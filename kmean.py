@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib as cm
+import matplotlib.cm as cm
 import branca.colormap as branca_cm
 import seaborn as sns
 import plotly.express as px
@@ -183,7 +183,6 @@ if st.button("Lancer l'Analyse ACP"):
 
 # Titre de l'application
 st.subheader("Clustering des données climatiques avec KMeans")
-# Bouton pour exécuter KMeans
 
 if st.button("Lancer l'agorithme de Kmeans"):
     pca, pca_data, n_components, explained_variance = apply_pca(df_clim)
@@ -199,6 +198,7 @@ if st.button("Lancer l'agorithme de Kmeans"):
     k = st.slider("Choisir le nombre de clusters", min_value=5, max_value=20, value=16)
 
     # Appliquer KMeans
+    tab20 = plt.get_cmap('tab20')
     km, pred = apply_kmeans(pca_data, k)
     df_agroclimat['color'] = pred # Ajouter les clusters dans le dataframe
     set(pred)
@@ -207,12 +207,10 @@ if st.button("Lancer l'agorithme de Kmeans"):
     st.subheader(f"Visualisation des {k} clusters")
     fig_clusters = plot_clusters(pca, km, df_clim)
     st.pyplot(fig_clusters)
-elif st.button("Lancer la représentation cartographique des clusters"):
-    tab20 = plt.get_cmap('tab20')
-    st.subheader("Cartographie des clusters sur la carte du Bénin")
-    # Fusionner les données géographiques et agroclimatiques
-    fig, ax = plt.subplots(figsize=(10, 6))
-    geo.merge(df_agroclimat, left_on='NOM_COM', right_on='Communes').plot(column='color', cmap=tab20, legend=True, ax=ax)
-    st.pyplot(fig)
-else:
-    st.write("Veuillez lancer l'algorithme de KMeans pour afficher la carte des clusters.")
+
+
+st.subheader("Cartographie des clusters sur la carte du Bénin")
+# Fusionner les données géographiques et agroclimatiques
+fig, ax = plt.subplots(figsize=(10, 6))
+geo.merge(df_agroclimat, left_on='NOM_COM', right_on='Communes').plot(column='color', cmap=tab20, legend=True, ax=ax)
+st.pyplot(fig)
