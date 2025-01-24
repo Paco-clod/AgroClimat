@@ -39,7 +39,8 @@ geo = gpd.read_file("benin_geographie")
 
 
 st.title("Contexte du projet")
-st.title("# - **AgroClimat** # : Pour la lutte contre les changements climatiques et Pour une agriculture résiliente et productive au Bénin")
+st.subheader("# - **AgroClimat** # : Une solution intelligente pour la gestion des ressources hydriques, agricoles et la lutte contre le changement climatique")
+st.subheader("Agroclimat, c'est Pour la lutte contre les changements climatiques et Pour une agriculture résiliente et productive au Bénin")
 st.write("L'agriculture demeure une pierre angulaire de l'économie béninoise, fournissant des moyens de subsistance à une grande partie de la population et contribuant significativement au produit intérieur brut (PIB) du pays. Cependant, la production agricole au Bénin est souvent entravée par des défis climatiques, notamment des variations imprévisibles des précipitations, des températures extrêmes et des événements météorologiques sévères. Ces fluctuations climatiques ont un impact direct sur les rendements agricoles, rendant la production alimentaire plus incertaine et exacerbant les risques pour la sécurité alimentaire.")
 st.title("Objectif du projet")
 st.write("Le projet AgroClimat a pour objectif de développer un outil de prévision des facteurs climatiques pour mettre en place des mesure relatives pour lutter contre les chnagement climatiques d'une part, et faire des prévisons de la production agricoles en fonction des ces conditions climatiques. L'objectif est de permettre aux acteurs du secteur agricoles et des changement climatiques de mieux anticiper les rendements de leurs cultures en fonction des conditions climatiques préviionneles pour une agriculture résilliente et productive.")
