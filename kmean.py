@@ -208,7 +208,6 @@ if st.button("Lancer l'agorithme de Kmeans"):
     fig_clusters = plot_clusters(pca, km, df_clim)
     st.pyplot(fig_clusters)
 
-tab20 = plt.get_cmap('tab20')
 st.subheader("Cartographie des clusters sur la carte du Bénin")
 # Fusionner les données géographiques et agroclimatiques
 fig, ax = plt.subplots(figsize=(10, 6))
