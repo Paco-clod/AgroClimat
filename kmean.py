@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+import matplotlib as cm
 import branca.colormap as branca_cm
 import seaborn as sns
 import plotly.express as px
@@ -208,7 +208,7 @@ if st.button("Lancer l'agorithme de Kmeans"):
     fig_clusters = plot_clusters(pca, km, df_clim)
     st.pyplot(fig_clusters)
 
-
+tab20 = plt.get_cmap('tab20')
 st.subheader("Cartographie des clusters sur la carte du Bénin")
 # Fusionner les données géographiques et agroclimatiques
 fig, ax = plt.subplots(figsize=(10, 6))
