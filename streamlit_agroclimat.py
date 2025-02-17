@@ -40,7 +40,7 @@ geo = gpd.read_file("benin_geographie")
 
 pages = {
     "AgroClimat": [
-        st.Page("contexte.py", title="Contexte du projet"),
+        st.Page("contexte.py", title="AgroClimat"),
         st.Page("explore.py", title="Exploration des données"),
     ],
     "Analyse Exploration des Données": [
